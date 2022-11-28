@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>restapi</title>
+</head>
+<body>
+
+	<div th:insert="header.html"></div>
+
+      <table class="table table-stripted">
+      
+         <thead>
+           <tr>
+              <th>UserId</th>
+              <th>Id</th>
+              <th>Title</th>
+              <th>Body</th>
+           </tr>
+         </thead>
+         
+         <tbody id="postTable">
+           
+         </tbody>
+      
+      </table>
+      
+      
+      <script type="text/javascript">
+      
+      $(document).ready(function() {
+    	  
+    	  
+    	  
+          $.ajax({
+              url: "https://jsonplaceholder.typicode.com/posts"
+          }).then(function(data) {
+          	
+        	  var row ='';
+        	  
+        	  for(var i=0; i<data.length; i++){
+        		  
+        		   row +='<tr>' 
+	        		   row += '<td>'+data[i].userId+'</td>';
+	        		   row += '<td>'+data[i].id+'</td>';
+	        		   row += '<td>'+data[i].title+'</td>';
+	        		   row += '<td>'+data[i].body+'</td>';
+	        		   
+	        		row += '</tr>';   
+        	  }
+        	  
+        	  $('#postTable').append(row);
+          	
+          });
+      });
+      
+      </script>
+
+
+</body>
+</html>

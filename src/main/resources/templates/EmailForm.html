@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>contact</title>
+</head>
+<body>
+
+    <div th:insert="header.html"></div>
+    
+    <div class="containcer-fluid">
+    
+          <div class="row m-2 p-2">
+          
+          <form action="/contact" method="post">
+            <div >
+               ToEmail  <input type="text" name="toEmail" class="form-control" >
+            </div>
+            
+            <div>
+               Subject  <input type="text" name="subject" class="form-control" >
+            </div>
+            
+            <div>
+            
+               Message <textarea  rows="5" cols="20"  name="message" class="form-control" > </textarea>
+            </div>
+            
+            <div>
+              <input type="submit" value="Send" class="btn btn-success w-10">
+            </div>
+          </form>
+          </div>
+        
+    </div>
+    
+
+</body>
+</html>
